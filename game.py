@@ -78,7 +78,7 @@ class TicTacToe:
 def play(game, x_player, o_player, print_game=True):
     # returns the winner of the game (the letter) or None for a tie
     if print_game:
-        game.print_boards_nums() # tell us which number corresponds to which box
+        game.print_board_nums() # tell us which number corresponds to which box
         
     letter = 'X'    # set a starting number
     # iterate while the game still has empty squares
