@@ -18,7 +18,7 @@ class TicTacToe:
         for row in number_board:
             print('| ' + ' | '.join(row) + ' |')
             
-    def avaiable_move(self):    # return empty spots
+    def avaiable_moves(self):    # return empty spots
         # moves = []
         # for (i, spot) in enumerate(self.board):    
         # # ['x', 'x', 'o'] --> [(0, 'x'), (1, 'x'), (2, 'o')]
