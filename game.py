@@ -40,6 +40,7 @@ class TicTacToe:
             return True
         return False
     
+    
 def play(game, x_player, o_player, print_game=True):
     if print_game:
         game.print_boards_nums() # tell us which number corresponds to which box
@@ -55,4 +56,12 @@ def play(game, x_player, o_player, print_game=True):
         else:
             square = x_player.get_move(game)
         
+        # define a function to make a move
+        if game.make_move(square, letter):  # if valid
+            if print_game:
+                print(letter + ' makes a move to square {square}')
+                game.print_board()
+                print('')   # empty line
+            
+            # after we make our move, we need to alternate letters
 
