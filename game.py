@@ -32,6 +32,14 @@ class TicTacToe:
         # return len(self.available_moves())  # count how many empty spots
         return self.board.count(' ')    # count number of spaces in the board
     
+    def make_move(self, square, letter):
+        # if valid move, then make the move (assign square to letter)
+        # then return move. if invalid, return false
+        if self.board[square] == ' ':   # if nothing is there
+            self.board[square] = letter
+            return True
+        return False
+    
 def play(game, x_player, o_player, print_game=True):
     if print_game:
         game.print_boards_nums() # tell us which number corresponds to which box
@@ -46,3 +54,5 @@ def play(game, x_player, o_player, print_game=True):
             square = o_player.get_move(game)
         else:
             square = x_player.get_move(game)
+        
+
