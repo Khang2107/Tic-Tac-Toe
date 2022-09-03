@@ -37,6 +37,8 @@ class TicTacToe:
         # then return move. if invalid, return false
         if self.board[square] == ' ':   # if nothing is there
             self.board[square] = letter
+            if self.winner(square, letter):
+                self.current_winner = letter
             return True
         return False
     
@@ -64,4 +66,10 @@ def play(game, x_player, o_player, print_game=True):
                 print('')   # empty line
             
             # after we make our move, we need to alternate letters
-
+            # if letter == 'X':
+            #     letter = '0'
+            # else:
+            #     letter = 'X'
+            letter = '0' if letter == 'X' else 'X'  # switch player
+        
+        
