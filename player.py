@@ -26,8 +26,9 @@ class HumanPlayer(Player):
     def get_move(self, game):
         valid_square = False    
         val = None  # user has not input value yet
+        
         while not valid_square:
-            square = input(self.letter + '\'s turn. Input move (0-9): ')
+            square = input(self.letter + "'s turn. Input move (0-9): ")
             # we are going to check that this is a correct value by trying to cast
             # it to an integer, and if it is not, then we say it is invalid
             try:
@@ -37,6 +38,7 @@ class HumanPlayer(Player):
                 if val not in game.available_moves():
                     raise ValueError
                 valid_square = True     # if it is successful
+                
             except ValueError:
                 print("Invalid square. Try again")
                 
