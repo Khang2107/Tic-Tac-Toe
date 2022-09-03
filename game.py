@@ -43,6 +43,8 @@ class TicTacToe:
         return False
     
     
+    
+    
 def play(game, x_player, o_player, print_game=True):
     # returns the winner of the game (the letter) or None for a tie
     if print_game:
@@ -69,6 +71,7 @@ def play(game, x_player, o_player, print_game=True):
             if game.current_winner: # check the current winner and print out letter
                 if print_game:
                     print(letter + ' wins!')
+                return letter   # print letter that wins
             
             # after we make our move, we need to alternate letters
             # if letter == 'X':
@@ -77,4 +80,6 @@ def play(game, x_player, o_player, print_game=True):
             #     letter = 'X'
             letter = '0' if letter == 'X' else 'X'  # switch player
         
+        if print_game:
+            print("It's a tie!")
         
