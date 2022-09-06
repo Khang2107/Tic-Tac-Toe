@@ -34,7 +34,6 @@ class TicTacToe:
         # return len(self.available_moves())  # count how many empty spots
         return self.board.count(" ")    # count number of spaces in the board
     
-    '''Check'''
     def make_move(self, square, letter):
         # if valid move, then make the move (assign square to letter)
         # then return move. if invalid, return false
@@ -46,7 +45,6 @@ class TicTacToe:
         return False
     
     def winner(self, square, letter):
-        '''checked'''
         # winner if 3 in a row anywhere - we have to check all of them
         # first check the row
         row_index = square // 3     # how many times 3 goes into square
@@ -54,14 +52,12 @@ class TicTacToe:
         if all([spot == letter for spot in row]):    # check if spot == letter (3 in a row)
             return True
 
-        '''checked'''
         # check column
         col_index = square % 3  # devide by 3 and take leftover
         column = [self.board[col_index+i * 3] for i in range(3)]
         if all([spot == letter for spot in column]):    # check if spot == letter (3 in a row)
             return True
 
-        '''checked'''
         # check diagonals
         # only if the square is an even number {0,2,4,6,8}
         # these are the only moves possible to win a diagonal
@@ -87,7 +83,6 @@ def play(game, x_player, o_player, print_game=True):
     # iterate while the game still has empty squares
     # we do not worry about the winner because we will just return that
     # which breaks the loop
-    '''Checked'''
     while game.empty_squares():
         # get the move from appropriate player
         if letter == "0":
@@ -119,8 +114,7 @@ def play(game, x_player, o_player, print_game=True):
         
     if print_game:
         print("It's a tie!")
-
-'''Checked'''        
+        
 if __name__ == '__main__':
     x_player = HumanPlayer("X")     # set human_player if selected X
     o_player = RandomComputerPlayer('O')
