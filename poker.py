@@ -12,7 +12,7 @@
 # Academic Misconduct Policy.
 #
 
-import dice_poker
+import dice
 import random
 
 # Stage 1 - Test to ensure that the file works properly
